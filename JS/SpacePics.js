@@ -4,10 +4,12 @@ var Loading = require('./Components/Loading.js');
 var PictureOfTheDay = require('./Components/PictureOfTheDay.js');
 var ErrorWidget = require('./Components/ErrorWidget.js');
 var DateBrowser = require('./Components/DateBrowser.js');
+var Title = require('./Components/Title.js');
 
 var {
   StyleSheet,
   View,
+  Text,
 } = React;
 
 class SpacePics extends React.Component {
@@ -28,32 +30,29 @@ class SpacePics extends React.Component {
   render() {
 
     var innerNode;
+    var title;
 
     // if we have an error
     if (this.state.error !== null) {
-      innerNode = (
-        <View style={styles.container}>
-          <ErrorWidget title="NASA API Error" message={this.state.error} />
-        </View>
-      );
+      innerNode = <ErrorWidget title="NASA API Error" message={this.state.error} />;
+      title = 'Error';
     }
 
     // if we don't have a picture
     else if (this.state.picture === null) {
-      innerNode = (
-        <View style={styles.container}>
-          <Loading title="Getting Image..." />
-        </View>
-      );
+      innerNode = <Loading title="Getting Image..." />;
+      title = 'Loading...';
     }
 
     // if we have a picture
     else {
-      innerNode = <PictureOfTheDay picture={this.state.picture} />
+      innerNode = <PictureOfTheDay picture={this.state.picture} />;
+      title = this.state.picture.title;
     }
 
     return (
       <View style={styles.container}>
+        <Title title={title} />
         {innerNode}
         <DateBrowser date={this.state.date} onChange={this._onDateChange.bind(this)} />
       </View>

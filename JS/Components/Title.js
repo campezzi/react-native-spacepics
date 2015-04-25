@@ -1,35 +1,31 @@
 var React = require('react-native');
 var {
   StyleSheet,
-  Text,
   View,
+  Text,
 } = React;
 
-class ErrorWidget extends React.Component {
+class Title extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>{this.props.title}</Text>
-        <Text style={styles.message}>{this.props.message}</Text>
       </View>
     );
   }
 }
-module.exports = ErrorWidget;
+module.exports = Title;
 
-var styles = StyleSheet.create({
+styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
+    padding: 15,
+    paddingTop: 35,
+    backgroundColor: '#dedede',
+    alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10,
   },
   title: {
-    fontSize: 24,
     fontWeight: 'bold',
-  },
-  message: {
-    marginTop: 10,
   },
 });

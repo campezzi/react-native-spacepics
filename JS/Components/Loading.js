@@ -20,7 +20,9 @@ module.exports = Loading;
 
 var styles = StyleSheet.create({
   container: {
+    flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
     paddingTop: 10,
