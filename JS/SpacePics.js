@@ -9,7 +9,6 @@ var Title = require('./Components/Title.js');
 var {
   StyleSheet,
   View,
-  Text,
 } = React;
 
 class SpacePics extends React.Component {
