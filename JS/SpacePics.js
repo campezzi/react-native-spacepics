@@ -8,10 +8,6 @@ var DateBrowser = require('./Components/DateBrowser.js');
 var {
   StyleSheet,
   View,
-  Text,
-  Image,
-  ActivityIndicatorIOS,
-  TouchableHighlight,
 } = React;
 
 class SpacePics extends React.Component {
