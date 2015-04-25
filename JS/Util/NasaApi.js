@@ -1,4 +1,5 @@
-const NASA_API_KEY = 'o4es5iNpXDSR12rP3kFXetCiLV1lASr2riFU7viQ';
+// replace with a real API key :)
+const NASA_API_KEY = 'DEMO_KEY';
 
 var NasaApi = {
 
